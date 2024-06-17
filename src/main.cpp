@@ -102,12 +102,19 @@ void myFunction(int x, int y, char method)
     }
     else
     {
+      // Blink red rx LED and display error message
       outputMessage = "You can't divide by zero";
       result = NAN;
+      for (int i = 0; i < 10; i++) {
+        digitalWrite(LED_BUILTIN, HIGH);
+        delay(500);
+        digitalWrite(LED_BUILTIN, LOW);
+        delay(500);
+      }
     }
   }
   else if (method == '%')
-  { 
+  {
     outputMessage = "The remainder of " + String(x) + " and " + String(y) + " is ";
     result = x % y;
   }
@@ -120,6 +127,12 @@ void myFunction(int x, int y, char method)
   {
     outputMessage = "We can't calculate factorials yet";
     result = NAN;
+    for (int i = 0; i < 10; i++) {
+        digitalWrite(LED_BUILTIN, HIGH);
+        delay(500);
+        digitalWrite(LED_BUILTIN, LOW);
+        delay(500);
+      }
   }
   else if (method == 'e')
   {
@@ -155,6 +168,12 @@ void myFunction(int x, int y, char method)
   {
     outputMessage = "Unknown method";
     result = NAN;
+    for (int i = 0; i < 10; i++) {
+        digitalWrite(LED_BUILTIN, HIGH);
+        delay(500);
+        digitalWrite(LED_BUILTIN, LOW);
+        delay(500);
+      }
   }
   Serial.println(outputMessage);
   Serial.println(result, 10);
