@@ -176,5 +176,5 @@ void myFunction(int x, int y, char method)
       }
   }
   Serial.println(outputMessage);
-  Serial.println(result, 10);
+  Serial.println(result);
 }
